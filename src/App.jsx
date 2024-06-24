@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
 import './App.css'
-import Login from './Pages/login.jsx'
-import Signup from './Pages/Signup.jsx'
+import Login from './routes/login.jsx'
+import Signup from './routes/Signup.jsx'
 
 const arr = [];
 function App() {
