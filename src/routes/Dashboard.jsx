@@ -3,7 +3,21 @@ import React from "react";
 function Dashboard() {
 return (
     <div className="dashboard">
-      <h1>Dashboard</h1>
+      <div>
+
+      </div>
+      <input/>
+      <table>
+
+      </table>
+      <div>
+        <button>
+
+        </button>
+        <div>
+          
+        </div>
+      </div>
     </div>
   );
 }

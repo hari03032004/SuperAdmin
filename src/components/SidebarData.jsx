@@ -9,7 +9,7 @@ export const SidebarData = [
   {
     title: "Dashboard",
     path: "/",
-    icon: <img src="./Chart.svg" className="svg"/>,
+    icon: <img src="./Chart.svg" className="d svg"/>,
     cName: "nav-text",
   },
   {
@@ -38,7 +38,7 @@ export const SidebarData = [
   },
   {
     title: "Payments",
-    path: "/Payments",
+    path: "/Payment",
     icon: <img src="./Wallet.svg" className="svg"/>,
     cName: "nav-text",
   },

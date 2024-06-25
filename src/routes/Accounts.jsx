@@ -1,11 +1,11 @@
 import React from "react";
 
-function Home() {
+function Accounts() {
   return (
-    <div className="home">
-      <h1>Home</h1>
+    <div className="accounts">
+      <h1>Accounts</h1>
     </div>
   );
 }
 
-export default Home;
+export default Accounts;
