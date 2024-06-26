@@ -17,8 +17,10 @@ function Navbar() {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" >
             <li className="logo">
-              <img src="./logo.svg" />
-              PaceB
+              <Link to="/">
+                <img src="./logo.svg" />
+                  PaceB  
+                </Link>
             </li>
             <li className="menu">
               MENU
