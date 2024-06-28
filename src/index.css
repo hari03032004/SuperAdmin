@@ -3,5 +3,112 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+:root{
+  --tablewidth: 900px;
+}
 
+.layout{
+  display: grid;
+  grid-template-columns: 245px 1fr; /* Sidebar 200px wide, main content takes the rest */
+  grid-gap: 10px;
+  height: 100vh;
+  border: 5px solid sandybrown;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh;
+}
+.dash-table{
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+  width: var(--tablewidth); 
+  border: 1px solid #808080;
 
+}
+.dash-table td,th,tr{
+  text-align: center;
+  padding: 5px 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.dash-table th{
+  border-top:1px solid black;
+  border-bottom: 1px solid black;
+
+}
+.dash-table td{
+  border-bottom: 1px solid #808080;
+  color: #808080;
+
+}
+td form{
+ display: inline;
+}
+#details{
+  height: 40px;
+  background-color: none;
+  border: none;
+  outline: none;
+}
+
+.edit{
+  color: black;
+}
+.remove{
+  color: #E64E4D;
+}
+.search-bar{
+  width: 600px;
+  color: #808080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F6F6FB;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.search-bar input{
+  outline: none;
+  border:none;
+  background-color: #F6F6FB;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+}
+.button{
+  background-color: #E64E4D;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  height: 40px;
+  border: none;
+  padding: 0px 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+.downbar{
+  display: flex;
+  justify-content: space-between;
+  width:var(--tablewidth) ;
+}
+.downbar-buttons{
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+}
+.downbar-pages{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

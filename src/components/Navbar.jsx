@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
@@ -17,10 +15,10 @@ function Navbar() {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" >
             <li className="logo">
-              <Link to="/">
-                <img src="./logo.svg" />
+              <img src="./logo.svg" className="logo-image" height="40px"/>
+              <Link to="/" className="logo-text">
                   PaceB  
-                </Link>
+              </Link>
             </li>
             <li className="menu">
               MENU

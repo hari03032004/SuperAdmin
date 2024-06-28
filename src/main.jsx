@@ -17,6 +17,7 @@ import Reviews from "./routes/Reviews";
 import Accounts from "./routes/Accounts";
 import "./components/Sidebar.css";
 import './App.css'
+import "./index.css"
 
 const AppLayout = () => (
   <>

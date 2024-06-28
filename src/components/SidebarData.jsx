@@ -5,7 +5,7 @@ import "./Sidebar.css";
 export const SidebarData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: <img src="./Chart.svg" className="d svg"/>,
     cName: "nav-text",
   },
