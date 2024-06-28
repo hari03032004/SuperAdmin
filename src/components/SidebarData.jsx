@@ -1,8 +1,5 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
-import { FaUserAlt } from "react-icons/fa";
+import { GrUpdate } from "react-icons/gr";
 import "./Sidebar.css";
 
 export const SidebarData = [
@@ -46,6 +43,12 @@ export const SidebarData = [
     title: "Accounts",
     path: "/Accounts",
     icon: <img src="./Profile.svg" className="svg"/>,
+    cName: "nav-text",
+  },
+  {
+    title: "OTA Update",
+    path: "/otaupdate",
+    icon: <GrUpdate color="#E64E4D" />,
     cName: "nav-text",
   },
   {
