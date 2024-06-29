@@ -3,7 +3,9 @@ import React from "react";
 function Topbar(props) {
   return (
     <div className="topbar">
-      <h1>{props.name}</h1> 
+      <div className="topbar-heading">
+        <h1>{props.name}</h1>
+      </div>
       <div className="topbar-user">
         <img src="./dash.svg" />
         <h3>Dashboard</h3>
