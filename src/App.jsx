@@ -34,7 +34,7 @@ function App() {
   return (
     <div className='Box'>
       {login ? <Signup handleToggle={handleToggle} handleChange={handleChange}
-        formData={formData}
+        formData={formData} 
       /> : <Login handleToggle={handleToggle} handleChange={handleChange} formData={formData}  />}
     </div>
   )

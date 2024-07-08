@@ -15,6 +15,7 @@ import ContactUs from "./routes/ContactUs";
 import AddSubjects from "./routes/AddSubjects";
 import Reviews from "./routes/Reviews";
 import Accounts from "./routes/Accounts";
+import DoctorDetails from './routes/DoctorDetails';
 import "./components/Sidebar.css";
 import './App.css'
 import "./index.css"
@@ -28,15 +29,24 @@ const AppLayout = () => (
 
 const router = createBrowserRouter([
   {
+    path: "/login",
+    element:<App/>,
+  },
+  {
+    path: "/",
     element: <AppLayout />,
     children: [
       {
-        path: "/",
-        element: <App />,
+        path: "dashboard",
+        element: <Dashboard />,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard />,
+        path: "/dashboard/doctorDetails",
+        element: <DoctorDetails />,
+      },
+      {
+        path: "/dashboard/doctorDetails",
+        element: <DoctorDetails />,
       },
       {
         path: "/purchase",
@@ -65,8 +75,7 @@ const router = createBrowserRouter([
       {
         path: "/contactus",
         element: <ContactUs />,
-      }
-      ,
+      },
     ],
   },
 ]);

@@ -24,11 +24,12 @@ function Navbar() {
               MENU
             </li>
             {SidebarData.map((item, index) => {
-              if(index<4){
+              if(index<4 || index >4){
                 return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
                     {item.icon}
+                    {console.log(item.icon)}
                     <span >{item.title}</span>
                   </Link>
                 </li>
@@ -50,17 +51,11 @@ function Navbar() {
                 
               );
               }
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span >{item.title}</span>
-                  </Link>
-                </li>
-              );
             })}
           </ul>
+          <p className="logout">Logout</p>
         </nav>
+        
       </IconContext.Provider>
     </>
   );

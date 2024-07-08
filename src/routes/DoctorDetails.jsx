@@ -1,19 +1,18 @@
-import {useState} from "react";
-import "../index.css"
-import Topbar from "../components/Topbar";
-import Table from "../components/Table";
-import Searchbar from "../components/Searchbar";
-import Button from "../components/Button";
-import Pagination from "../components/Pagination";
-import { FaAngleLeft } from "react-icons/fa";
+import {useState} from 'react'
+import Dtable from '../components/Dtable'
+import Topbar from '../components/Topbar';
+import Searchbar from '../components/Searchbar';
+import Button from '../components/Button';
+import { FaAngleLeft, FaLeaf } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
-import { HospitalData } from "../components/HospitalData";
-import { Modal } from "../components/Modal";
+import Pagination from '../components/Pagination';
+import { SidebarData } from '../components/SidebarData';
+import { useLocation } from 'react-router-dom';
+import { doctorData } from '../components/HospitalData';
+import {DModal} from "../components/DoctorModal"
 
-
-
-function Dashboard() {
-  const item = HospitalData;
+export default function DoctorDetails() {
+  const item = doctorData;
   const [modalOpen, setModalOpen] = useState(false);
   const [posts, setPosts] = useState(item);
   const [loading, setLoading] = useState(false);
@@ -22,6 +21,8 @@ function Dashboard() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const location = useLocation();
+  const { doctor } = location.state || {};
   const [rowToEdit, setRowToEdit] = useState(null);
   const handleEditRow = (idx) => {
     setRowToEdit(idx);
@@ -43,17 +44,13 @@ function Dashboard() {
   const handleDeleteRow = (targetIndex) => {
     setPosts(posts.filter((_, idx) => idx !== targetIndex));
   };
-  // Change page
-  const paginate = pageNumber => {
-    setCurrentPage(pageNumber);
-    console.log(currentPage); 
-  }
   function modalOpenable(){
     setModalOpen(true);
     setRowToEdit(null)
   }
-  
-return (
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+  return (
     <div className="layout">
       <div> </div>
       <div className="container">
@@ -64,12 +61,13 @@ return (
           dash={true}
           />
         <Searchbar/>
+        <h1>Hospital {doctor}</h1>
         <div className="details-box">
-          <p className="details">Details</p>
+          <p className="details">Doctor Details</p>
         </div>
-        <Table item={currentPosts} name="HospitalDetails"  editRow={handleEditRow} deleteRow={handleDeleteRow}/>
+        <Dtable item={currentPosts} name="DoctorDetails" editRow={handleEditRow} deleteRow={handleDeleteRow}/>
         {modalOpen && (
-        <Modal
+        <DModal
           closeModal={() => {
             setModalOpen(false);
           }}
@@ -88,14 +86,12 @@ return (
               postsPerPage={postsPerPage}
               totalPosts={posts.length}
               paginate={paginate}
-              currentPage={currentPage}
             />
             <FaAngleRight style={{marginTop:'5px'}}/>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Dashboard;

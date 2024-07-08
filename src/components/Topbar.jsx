@@ -7,9 +7,9 @@ function Topbar(props) {
         <h1>{props.name}</h1>
       </div>
       <div className="topbar-user">
-        <img src="./dash.svg" />
-        <h3>Dashboard</h3>
-        <img src="./user-image.svg" />
+        {props.dash && <img src="./dash.svg" />}
+        {props.dashboard && <h3>Dashboard</h3>}
+        {props.user && <img src="./user-image.svg"/>}
       </div>
     </div>
   );
