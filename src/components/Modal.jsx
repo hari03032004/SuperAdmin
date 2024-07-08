@@ -5,7 +5,7 @@ import Button from "./Button";
 
 export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(
-    defaultValue || {hospital:"",display:"",category:"",description:"",location:""}
+    defaultValue || {id:1,hospital:"",display:"",category:"",description:"",location:"",option:""}
   );
 
   const handleChange = (e) => {

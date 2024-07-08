@@ -5,7 +5,7 @@ import Button from "./Button";
 
 export const DModal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(
-    defaultValue || {status:"Active",AnalysisRemaining:"",category:"",description:"",location:""},
+    defaultValue || {id:"",status:"Active",AnalysisRemaining:"",category:"",description:"",location:"",option:""},
   );
 
   const handleChange = (e) => {

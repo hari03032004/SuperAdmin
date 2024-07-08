@@ -39,6 +39,7 @@ function Dashboard() {
             return newRow;
           })
         );
+        console.log(posts);
   };
   const handleDeleteRow = (targetIndex) => {
     setPosts(posts.filter((_, idx) => idx !== targetIndex));
