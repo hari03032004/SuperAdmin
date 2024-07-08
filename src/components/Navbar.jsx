@@ -21,7 +21,7 @@ function Navbar() {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" >
             <li className="logo">
-              <img src="./logo.svg" className="logo-image" height="40px"/>
+              <img src="../public/logo.svg" className="logo-image" height="40px"/>
               <Link to="/" className="logo-text">
                   PaceB  
               </Link>

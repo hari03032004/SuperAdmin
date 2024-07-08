@@ -1,5 +1,4 @@
 import React from "react";
-
 function Topbar(props) {
   return (
     <div className="topbar">
@@ -7,9 +6,9 @@ function Topbar(props) {
         <h1>{props.name}</h1>
       </div>
       <div className="topbar-user">
-        {props.dash && <img src="./dash.svg" />}
+        {props.dash && <img src="../public/dash.svg" />}
         {props.dashboard && <h3>Dashboard</h3>}
-        {props.user && <img src="./user-image.svg"/>}
+        {props.user && <img src="../public/user-image.svg"/>}
       </div>
     </div>
   );
