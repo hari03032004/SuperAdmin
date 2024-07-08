@@ -32,8 +32,19 @@ export const DModal = ({ closeModal, onSubmit, defaultValue }) => {
       <div className="modal">
         <form>
           <div className="form-group">
-            <label htmlFor="hospital">Hospital</label>
-            <input name="hospital" onChange={handleChange} value={formState.hospital} />
+            <label htmlFor="status">Status</label>
+            <select
+              name="status"
+              onChange={handleChange}
+              value={formState.status}
+            >
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="AnalysisRemaining">Analysis Remaining</label>
+            <input name="AnalysisRemaining" onChange={handleChange} value={formState.AnalysisRemaining} />
           </div>
           <div className="form-group">
             <label htmlFor="category">Category</label>
@@ -57,3 +68,4 @@ export const DModal = ({ closeModal, onSubmit, defaultValue }) => {
     </div>
   );
 };
+

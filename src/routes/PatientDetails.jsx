@@ -7,12 +7,15 @@ import { FaAngleLeft, FaLeaf } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import Pagination from '../components/Pagination';
 import { SidebarData } from '../components/SidebarData';
-import {useNavigate, useLocation } from 'react-router-dom';
-import { doctorData } from '../components/HospitalData';
-import {DModal} from "../components/DoctorModal"
+import { useLocation,useNavigate } from 'react-router-dom';
+import { patientData } from '../components/HospitalData';
+import Ptable from '../components/Ptable'
+import {PModal} from "../components/PModal"
+
 
 export default function DoctorDetails() {
-  const item = doctorData;
+  const item = patientData;
+  console.log(item)
   const [modalOpen, setModalOpen] = useState(false);
   const [posts, setPosts] = useState(item);
   const [loading, setLoading] = useState(false);
@@ -22,7 +25,7 @@ export default function DoctorDetails() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const location = useLocation();
-  const { hosp } = location.state || {};
+  const {hosp } = location.state || {};
   const [rowToEdit, setRowToEdit] = useState(null);
   const handleEditRow = (idx) => {
     setRowToEdit(idx);
@@ -30,7 +33,6 @@ export default function DoctorDetails() {
     setModalOpen(true);
   };
   const handleSubmit = (newRow) => {
-    console.log("Received");
     rowToEdit === null
       ? setPosts([...posts, newRow])
       : setPosts(
@@ -55,7 +57,6 @@ export default function DoctorDetails() {
     navigate(-1);
   }
   // Change page
-  
   const paginate = pageNumber => setCurrentPage(pageNumber);
   return (
     <div className="layout">
@@ -70,11 +71,11 @@ export default function DoctorDetails() {
         <Searchbar/>
         <h1>Hospital {hosp}</h1>
         <div className="details-box">
-          <p className="details">Doctor Details</p>
+          <p className="details">Patient Details</p>
         </div>
-        <Dtable item={currentPosts} name="DoctorDetails" editRow={handleEditRow} deleteRow={handleDeleteRow}/>
+        <Ptable item={currentPosts} name="patientDetails" editRow={handleEditRow} deleteRow={handleDeleteRow}/>
         {modalOpen && (
-        <DModal
+        <PModal
           closeModal={() => {
             setModalOpen(false);
           }}

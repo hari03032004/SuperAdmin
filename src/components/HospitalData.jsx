@@ -27,3 +27,12 @@ export const doctorData = ()=> [
   {id:1,status:"Active",AnalysisRemaining:"---",category:"---",description:"---",location:"---",option:" "},
   {id:1,status:"Active",AnalysisRemaining:"---",category:"---",description:"---",location:"---",option:" "}
 ];
+
+export const patientData = ()=>[
+  {id:1,gender:"Male",age:"---",region:"---",height:"---",weight:"---",bmi:"---",shoesize:"---",option:""},
+  {id:1,gender:"Male",age:"---",region:"---",height:"---",weight:"---",bmi:"---",shoesize:"---",option:""},
+  {id:1,gender:"Male",age:"---",region:"---",height:"---",weight:"---",bmi:"---",shoesize:"---",option:""},
+  {id:1,gender:"Male",age:"---",region:"---",height:"---",weight:"---",bmi:"---",shoesize:"---",option:""},
+  {id:1,gender:"Male",age:"---",region:"---",height:"---",weight:"---",bmi:"---",shoesize:"---",option:""},
+  {id:1,gender:"Male",age:"---",region:"---",height:"---",weight:"---",bmi:"---",shoesize:"---",option:""},
+]

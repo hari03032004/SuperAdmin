@@ -1,12 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
 function Table(props) {
   const items = props.item;
   const uniqueKeys = [...new Set(items.flatMap(obj => Object.keys(obj)))];
   const navigate = useNavigate();
   const handleChange = (event) => {
-    navigate("doctorDetails", { state: { doctor: event.target.value} });
+    const selectedOption = event.target.selectedOptions[0];
+    const hospital = event.target.value;
+    const link = selectedOption.getAttribute('data-link');
+    
+    navigate(link, { state: { hosp:hospital } });
 
   };
 
@@ -25,8 +31,8 @@ function Table(props) {
               <td>
                 <select name="details" id="details" onChange={handleChange}>
                   <option value="">Select</option>
-                  <option value={item.hospital}>Doctor Details</option>
-                  <option value={item.hospital}>Patient Details</option>
+                  <option value={item.hospital} data-link="doctorDetails">Doctor Details</option>
+                  <option value={item.hospital} data-link="patientDetails">Patient Details</option>
                 </select>
               </td>
               <td>{item.category}</td>

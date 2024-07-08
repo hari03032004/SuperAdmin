@@ -16,6 +16,7 @@ import AddSubjects from "./routes/AddSubjects";
 import Reviews from "./routes/Reviews";
 import Accounts from "./routes/Accounts";
 import DoctorDetails from './routes/DoctorDetails';
+import PatientDetails from "./routes/PatientDetails"
 import "./components/Sidebar.css";
 import './App.css'
 import "./index.css"
@@ -45,8 +46,8 @@ const router = createBrowserRouter([
         element: <DoctorDetails />,
       },
       {
-        path: "/dashboard/doctorDetails",
-        element: <DoctorDetails />,
+        path: "/dashboard/patientDetails",
+        element: <PatientDetails />,
       },
       {
         path: "/purchase",

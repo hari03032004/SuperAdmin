@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import "./Sidebar.css";  
+import { useNavigate } from "react-router-dom";
+import Topbar from "./Topbar";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(true);
+  const navigate = useNavigate();
+  function handleClick(){
+    navigate("/login");
+  }
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -53,7 +59,7 @@ function Navbar() {
               }
             })}
           </ul>
-          <p className="logout">Logout</p>
+          <a className="logout" onClick={handleClick}>Logout</a>
         </nav>
         
       </IconContext.Provider>
